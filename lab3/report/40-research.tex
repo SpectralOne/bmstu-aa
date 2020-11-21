@@ -1,0 +1,111 @@
+\chapter{Исследовательская часть}
+
+\section{Пример работы}
+
+Демонстрация работы программы приведена на рисунке \ref{img:sort_demo}.
+
+\boximg{25mm}{sort_demo}{Демонстрация работы алгоритмов сортировки}
+
+\section{Технические характеристики}
+
+Технические характеристики устройства, на котором выполнялось тестирование:
+
+\begin{itemize}
+	\item Операционная система: Kali \cite{kali} Linux \cite{linux} 5.8.10-1kali1 64-bit.
+	\item Память: 8 GB.
+	\item Процессор: Intel® Core™ i5-8250U \cite{intel} CPU @ 1.60GHz
+\end{itemize}
+
+Тестирование проводилось на ноутбуке при включённом режиме производительности. Во время тестирования ноутбук был нагружен только системными процессами.
+
+\section{Время выполнения алгоритмов}
+
+Алгоритмы тестировались при помощи написания <<бенчмарков>> \cite{gotest}, предоставляемых встроенными в Go средствами. Для такого рода тестирования не нужно самостоятельно указывать количество повторов. В библиотеке для тестирования существует константа $N$, которая динамически варьируется в зависимости от того, был ли получен стабильный результат или нет.
+
+В листинге \ref{lst:sort_test} пример реализации бенчмарка.
+
+\begin{lstinputlisting}[
+	caption={Реализация бенчмарка},
+	label={lst:sort_test},
+	style={go},
+	linerange={7-13},
+	]{../src/sort/sort_test.go}
+\end{lstinputlisting}
+
+На рисунках \ref{plt:time_rndm} --- \ref{plt:time_rev} приведены графики зависимостей времени работы алгоритмов от различных наборов данных.
+
+\begin{figure}[!hb]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=left,
+			xlabel=Размер массива,
+			ylabel={Время, нс},
+			legend pos=north west,
+			ymajorgrids=true
+		]
+			\addplot table[x=size,y=BubbleSort,col sep=comma] {inc/csv/bbl_rndm.csv};
+			\addplot table[x=size,y=InsertSort,col sep=comma] {inc/csv/ins_rndm.csv};
+			\addplot table[x=size,y=QuickSort,col sep=comma] {inc/csv/qck_rndm.csv};
+			\legend{BubbleSort, InsertSort, QuickSort}
+		\end{axis}
+	\end{tikzpicture}
+	\captionsetup{justification=centering}
+	\caption{Сравнение алгоритмов на массивах неупорядоченных данных.}
+	\label{plt:time_rndm}
+\end{figure}
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=left,
+			xlabel=Размер массива,
+			ylabel={Время, нс},
+			legend pos=north west,
+			ymajorgrids=true
+			]
+			\addplot table[x=size,y=BubbleSort,col sep=comma] 	{inc/csv/bbl_sort.csv};
+			\addplot table[x=size,y=InsertSort,col sep=comma] 	{inc/csv/ins_sort.csv};
+			\addplot table[x=size,y=QuickSort,col sep=comma] 	{inc/csv/qck_sort.csv};
+			\legend{BubbleSort, InsertSort, QuickSort}
+		\end{axis}
+	\end{tikzpicture}
+	\captionsetup{justification=centering}
+	\caption{Сравнение алгоритмов на массивах упорядоченных по возрастанию данных.}
+	\label{plt:time_sort}
+\end{figure}
+
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=left,
+			xlabel=Размер массива,
+			ylabel={Время, нс},
+			legend pos=north west,
+			ymajorgrids=true
+			]
+			\addplot table[x=size,y=BubbleSort,col sep=comma] 	{inc/csv/bbl_rev.csv};
+			\addplot table[x=size,y=InsertSort,col sep=comma] 	{inc/csv/ins_rev.csv};
+			\addplot table[x=size,y=QuickSort,col sep=comma] 	{inc/csv/qck_rev.csv};
+			\legend{BubbleSort, InsertSort, QuickSort}
+		\end{axis}
+	\end{tikzpicture}
+	\captionsetup{justification=centering}
+	\caption{Сравнение алгоритмов на массивах упорядоченных по убыванию данных.}
+	\label{plt:time_rev}
+\end{figure}
+
+\newpage
+\section{Производительность алгоритмов}
+
+Производительность и объем выделенной памяти при работе алгоритмов указаны на рисунке \ref{img:memory}.
+
+\boximg{40mm}{memory}{Замеры производительности алгоритмов, выполненные при помощи команды \code{go test -bench . -benchmem}}
+
+\section*{Вывод}
+
+Были протестированы различные алгоритмы сортировок. По результатам эксперимента алгоритм сортировки пузырьком показывает худшие временные показатели. Алгоритм быстрой сортировки показал худший результат на упорядоченных наборах данных. Самые лучшие временные показатели во всех категориях показал алгоритм сортировки вставками.

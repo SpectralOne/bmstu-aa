@@ -1,0 +1,70 @@
+\chapter{Технологическая часть}
+
+В данном разделе приведены требования к программному обеспечению, средства реализации и листинги кода.
+
+\section{Требования к ПО}
+
+К программе предъявляется ряд требований:
+\begin{itemize}
+	\item корректная сортировка.
+\end{itemize}
+
+\section{Средства реализации}
+
+В качестве языка программирования для реализации данной лабораторной работы был выбран многопоточный язык GO \cite{golang}. Данный выбор обусловлен моим желанием расширить свои знания в области применения данного язкыа. Так же данный язык предоставляет средства тестирования разработанного ПО.
+
+\clearpage
+
+\section{Листинг кода}
+
+В листингах \ref{lst:bubble}--\ref{lst:quick} приведены реализации алгоритмов умножения матриц.
+
+\begin{lstinputlisting}[
+	caption={Сортировка пузырьком},
+	label={lst:bubble},
+	style={go},
+	linerange={9-17},
+	]{../src/sort/sort.go}
+\end{lstinputlisting}
+
+\begin{lstinputlisting}[
+	caption={Сортировка вставками},
+	label={lst:insert},
+	style={go},
+	linerange={20-30},
+	]{../src/sort/sort.go}
+\end{lstinputlisting}
+
+\begin{lstinputlisting}[
+	caption={Быстрая сортировка},
+	label={lst:quick},
+	style={go},
+	linerange={45-69},
+	]{../src/sort/sort.go}
+\end{lstinputlisting}
+
+В таблице \ref{tabular:functional_test} приведены функциональные тесты для алгоритмов сортировок.
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[h]
+	\begin{center}
+	\caption{Функциональные тесты}
+	\label{tabular:functional_test}
+		\begin{tabular}{|*2{>{\renewcommand{\arraystretch}{1}}c|}}
+			\hline
+			\textbf{Исходные данные} & \textbf{Ожидаемый результат}\\
+			\hline
+			1 2 3 4 5 & 1 2 3 4 5\\
+			\hline
+			5 4 3 2 1 & 1 2 3 4 5\\
+			\hline
+			2 4 5 3 1 & 1 2  3 4 5\\
+			\hline
+
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\section*{Вывод}
+
+Были разработаны и протестированы спроектированные алгоритмы: сортировки пузырьком, сортировки вставками и быстрой сортировки.

@@ -1,0 +1,23 @@
+\babel@toc {russian}{}
+\contentsline {chapter}{Введение}{3}{chapter*.2}%
+\contentsline {chapter}{\numberline {1}Аналитическая часть}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Сортировка пузырьком}{4}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Сортировка вставками}{4}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Быстрая сортировка}{4}{section.1.3}%
+\contentsline {chapter}{\numberline {2}Конструкторская часть}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Схемы алгоритмов}{6}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Трудоемкость алгоритмов}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Сортировка вставками}{11}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Сортировка пузырьком}{11}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Быстрая сортировка}{12}{subsection.2.2.3}%
+\contentsline {chapter}{\numberline {3}Технологическая часть}{14}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Требования к ПО}{14}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Средства реализации}{14}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Листинг кода}{15}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Исследовательская часть}{17}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Пример работы}{17}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Технические характеристики}{17}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Время выполнения алгоритмов}{17}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Производительность алгоритмов}{19}{section.4.4}%
+\contentsline {chapter}{Заключение}{21}{chapter*.14}%
+\contentsline {chapter}{Литература}{22}{chapter*.14}%
