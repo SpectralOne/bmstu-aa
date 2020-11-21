@@ -1,0 +1,103 @@
+\chapter{Исследовательская часть}
+
+\section{Пример работы}
+
+Демонстрация работы программы приведена на рисунке \ref{img:mult_demo}.
+
+\boximg{160mm}{mult_demo}{Демонстрация работы алгоритмов умножения матриц}
+
+\section{Технические характеристики}
+
+Технические характеристики устройства, на котором выполнялось тестирование:
+
+\begin{itemize}
+	\item Операционная система: Kali \cite{kali} Linux \cite{linux} 5.8.10-1kali1 64-bit.
+	\item Память: 8 GB.
+	\item Процессор: Intel® Core™ i5-8250U \cite{intel} CPU @ 1.60GHz
+\end{itemize}
+
+Тестирование проводилось на ноутбуке при включённом режиме производительности. Во время тестирования ноутбук был нагружен только системными процессами.
+
+\section{Время выполнения алгоритмов}
+
+Алгоритмы тестировались при помощи написания <<бенчмарков>> \cite{gotest}, предоставляемых встроенными в Go средствами. Для такого рода тестирования не нужно самостоятельно указывать количество повторов. В библиотеке для тестирования существует константа $N$, которая динамически варьируется в зависимости от того, был ли получен стабильный результат или нет.
+
+В листинге \ref{lst:mult_test} пример реализации бенчмарка.
+
+\begin{lstinputlisting}[
+	caption={Реализация бенчмарка},
+	label={lst:mult_test},
+	style={go},
+	linerange={1-17},
+	]{../src/multiplication/multiplication_test.go}
+\end{lstinputlisting}
+
+Результаты замеров приведены в таблице \ref{tbl:time}. На рисунках \ref{plt:time_even} и \ref{plt:time_odd} приведены графики зависимостей времени работы алгоритмов от нечетных и четных размеров матриц.
+
+\begin{table}[h]
+	\begin{center}
+		\caption{Замер времени для разных размеров матриц}
+		\label{tbl:time}
+		%x*c|
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			                      & \multicolumn{3}{c|}{\bfseries Время, нс}                                    \\ \cline{2-4}
+			\bfseries Размер матрицы & \bfseries Classic & \bfseries Winograd & \bfseries ImpWinograd 
+			\csvreader{inc/csv/time.csv}{}
+			{\\\hline \csvcoli&\csvcolii&\csvcoliii&\csvcoliv}
+			\\\hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=left,
+			xlabel=Размер матрицы,
+			ylabel={Время, нс},
+			legend pos=north west,
+			ymajorgrids=true
+		]
+			\addplot table[x=size,y=Classic,col sep=comma] {inc/csv/time_classic_even.csv};
+			\addplot table[x=size,y=Winograd,col sep=comma] {inc/csv/time_winograd_even.csv};
+			\addplot table[x=size,y=ImpWinograd,col sep=comma] {inc/csv/time_imp_winograd_even.csv};
+			\legend{Классический, Виноград, Оптим. Виноград}
+		\end{axis}
+	\end{tikzpicture}
+	\captionsetup{justification=centering}
+	\caption{Зависимость времени работы алгоритма умножения матриц от размера матрицы. Четные матрицы.}
+	\label{plt:time_even}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=left,
+			xlabel=Размер матрицы,
+			ylabel={Время, нс},
+			legend pos=north west,
+			ymajorgrids=true
+			]
+			\addplot table[x=size,y=Classic,col sep=comma] {inc/csv/time_classic_odd.csv};
+			\addplot table[x=size,y=Winograd,col sep=comma] {inc/csv/time_winograd_odd.csv};
+			\addplot table[x=size,y=ImpWinograd,col sep=comma] {inc/csv/time_imp_winograd_odd.csv};
+			\legend{Классический, Виноград, Оптим. Виноград}
+		\end{axis}
+	\end{tikzpicture}
+	\captionsetup{justification=centering}
+	\caption{Зависимость времени работы алгоритма умножения матриц от размера матрицы. Нечетные матрицы.}
+	\label{plt:time_odd}
+\end{figure}
+
+\section{Производительность алгоритмов}
+
+Производительность и объем выделенной памяти при работе алгоритмов указаны на рисунке \ref{img:memory}.
+
+\boximg{50mm}{memory}{Замеры производительности алгоритмов, выполненные при помощи команды \code{go test -bench . -benchmem}}
+
+\section*{Вывод}
+
+Были протестированы различные алгоритмы умножения матриц. По результатам эксперимента классический алгоритм показывает худшие временные показатели. Алгоритм Винограда и оптимизированный алгоритм Винограда работают немногим хуже на нечетных размерах матриц.
