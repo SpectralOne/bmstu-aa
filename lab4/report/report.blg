@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: report.aux
+A level-1 auxiliary file: 00-title.aux
+A level-1 auxiliary file: 01-contents.aux
+A level-1 auxiliary file: 02-intro.aux
+A level-1 auxiliary file: 10-analysis.aux
+A level-1 auxiliary file: 20-design.aux
+A level-1 auxiliary file: 30-impl.aux
+A level-1 auxiliary file: 40-research.aux
+A level-1 auxiliary file: 50-conclusion.aux
+A level-1 auxiliary file: 51-biblio.aux
+The style file: utf8gost705u.bst
+Database file #1: 51-biblio.bib
+Warning--empty booktitle in haskell
+Warning--empty booktitle in litr
+You've used 7 entries,
+            2958 wiz_defined-function locations,
+            700 strings with 6729 characters,
+and the built_in function-call counts, 1040 in all, are:
+= -- 110
+> -- 15
+< -- 2
++ -- 9
+- -- 2
+* -- 19
+:= -- 108
+add.period$ -- 16
+call.type$ -- 7
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 61
+empty$ -- 147
+format.name$ -- 2
+if$ -- 270
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 0
+newline$ -- 45
+num.names$ -- 6
+pop$ -- 49
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 30
+stack$ -- 0
+substring$ -- 0
+swap$ -- 23
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 2
+width$ -- 8
+write$ -- 90
+(There were 2 warnings)

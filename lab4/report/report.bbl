@@ -1,0 +1,57 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{haskell}
+\selectlanguageifdefined{russian}
+Анисимов~Н.С.~Строганов~Ю.В. Реализация
+  алгоритма умножения матриц по Винограду
+  на языке Haskell.
+\newblock -- Новые информационные технологии в
+  автоматизированных системах, 2018.
+
+\bibitem{litr}
+\selectlanguageifdefined{english}
+Корн~Г~А. Алгебра матриц и матричное
+  исчисление.
+\newblock -- McGraw-Hill Book Company, 1968.
+
+\bibitem{thread}
+\selectlanguageifdefined{russian}
+Документация по lparallel [Электронный ресурс].
+\newblock Режим доступа: \url{https://lparallel.org/api/kernel/}
+  (дата обращения: 16.10.2020).
+
+\bibitem{kali}
+\selectlanguageifdefined{russian}
+Our Most Advanced Penetration Testing Distribution, Ever.
+  [Электронный ресурс].
+\newblock Режим доступа: \url{https://kali.org/} (дата
+  обращения: 12.09.2020).
+
+\bibitem{linux}
+\selectlanguageifdefined{russian}
+Linux -- Википедия [Электронный ресурс].
+\newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/Linux}
+  (дата обращения: 12.09.2020).
+
+\bibitem{intel}
+\selectlanguageifdefined{russian}
+Intel Processors [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://www.intel.com/content/www/us/en/products/processors/core/i5-processors.html}
+  (дата обращения: 12.09.2020).
+
+\bibitem{chrono}
+\selectlanguageifdefined{russian}
+Документация по time [Электронный ресурс].
+\newblock Режим доступа:
+  \url{http://www.lispworks.com/documentation/lw60/LW/html/lw-628.htm}
+  (дата обращения: 16.10.2020).
+
+\end{thebibliography}
