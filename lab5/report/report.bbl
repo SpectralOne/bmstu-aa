@@ -1,0 +1,54 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{mednov}
+\selectlanguageifdefined{russian}
+В. П.~Меднов~Е. П.~Бондарев. Транспортные,
+  распределительные и рабочие конвейеры.
+\newblock -- М, 1970.
+
+\bibitem{golang}
+\selectlanguageifdefined{russian}
+The Go Programming Language [Электронный ресурс].
+\newblock Режим доступа: \url{https://golang.org/} (дата
+  обращения: 09.09.2020).
+
+\bibitem{lib:time}
+\selectlanguageifdefined{russian}
+testing -- Package time [Электронный ресурс].
+\newblock Режим доступа: \url{https://golang.org/pkg/time/}
+  (дата обращения: 18.11.2020).
+
+\bibitem{kali}
+\selectlanguageifdefined{russian}
+Our Most Advanced Penetration Testing Distribution, Ever.
+  [Электронный ресурс].
+\newblock Режим доступа: \url{https://kali.org/} (дата
+  обращения: 12.09.2020).
+
+\bibitem{linux}
+\selectlanguageifdefined{russian}
+Linux -- Википедия [Электронный ресурс].
+\newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/Linux}
+  (дата обращения: 12.09.2020).
+
+\bibitem{intel}
+\selectlanguageifdefined{russian}
+Intel Processors [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://www.intel.com/content/www/us/en/products/processors/core/i5-processors.html}
+  (дата обращения: 12.09.2020).
+
+\bibitem{gotest}
+\selectlanguageifdefined{russian}
+testing -- The Go Programming Language [Электронный ресурс].
+\newblock Режим доступа: \url{https://golang.org/pkg/testing/}
+  (дата обращения: 12.09.2020).
+
+\end{thebibliography}
