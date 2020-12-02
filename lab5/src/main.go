@@ -14,6 +14,7 @@ func main() {
 	wait := make(chan int)
 	lineP := conv.Parallel(amount, wait)
 	<-wait
+	// FIXME: uncomment log
 	// conv.Log(lineP)
 	_ = lineP
 	end := time.Now()
@@ -23,6 +24,7 @@ func main() {
 	lineL := conv.Linear(amount)
 	end = time.Now()
 	_ = lineL
+	// FIXME: uncomment log
 	// conv.Log(lineL)
 	fmt.Printf("%d тортов на линейном конвейере: %v\n", amount, end.Sub(start))
 }
