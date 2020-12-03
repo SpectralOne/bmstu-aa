@@ -34,7 +34,6 @@ func Create(size int) (d []Dictionary) {
 	for i := 0; i < size; i++ {
 		res := false
 		var company Dictionary
-		// govno := 0
 		for res != true {
 			company = Dictionary{
 				"name":  gofakeit.LoremIpsumParagraph(2, 10, 10, " "),
