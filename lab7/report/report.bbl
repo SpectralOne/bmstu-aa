@@ -1,0 +1,60 @@
+\begin{thebibliography}{1}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{brute}
+\selectlanguageifdefined{english}
+Silvio~P. Brute-force algorithms.
+\newblock -- Digital Humanities Advanced Research Centre (DHARC), Department of
+  Classical Philology andItalian Studies, University of Bologna, Bologna,
+  Italy, 2016.
+
+\bibitem{fa}
+\selectlanguageifdefined{english}
+Boashash~B. Time Frequency Analysis.
+\newblock -- Elsevier Ltd., 2003.
+
+\bibitem{golang}
+\selectlanguageifdefined{russian}
+The Go Programming Language [Электронный ресурс].
+\newblock Режим доступа: \url{https://golang.org/} (дата
+  обращения: 09.09.2020).
+
+\bibitem{faker}
+\selectlanguageifdefined{russian}
+Fake library. [Электронный ресурс].
+\newblock Режим доступа: \url{https://github.com/brianvoe/gofakeit}
+  (дата обращения: 03.12.2020).
+
+\bibitem{kali}
+\selectlanguageifdefined{russian}
+Our Most Advanced Penetration Testing Distribution, Ever.
+  [Электронный ресурс].
+\newblock Режим доступа: \url{https://kali.org/} (дата
+  обращения: 12.09.2020).
+
+\bibitem{linux}
+\selectlanguageifdefined{russian}
+Linux -- Википедия [Электронный ресурс].
+\newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/Linux}
+  (дата обращения: 12.09.2020).
+
+\bibitem{intel}
+\selectlanguageifdefined{russian}
+Intel Processors [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://www.intel.com/content/www/us/en/products/processors/core/i5-processors.html}
+  (дата обращения: 12.09.2020).
+
+\bibitem{gotest}
+\selectlanguageifdefined{russian}
+testing -- The Go Programming Language [Электронный ресурс].
+\newblock Режим доступа: \url{https://golang.org/pkg/testing/}
+  (дата обращения: 12.09.2020).
+
+\end{thebibliography}

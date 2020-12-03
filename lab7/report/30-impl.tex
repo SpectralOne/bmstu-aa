@@ -1,0 +1,77 @@
+\chapter{Технологическая часть}
+
+В данном разделе приведены требования к программному обеспечению, средства реализации и листинги кода.
+
+\section{Требования к ПО}
+
+К программе предъявляется ряд требований:
+\begin{itemize}
+	\item корректная сортировка.
+\end{itemize}
+
+\section{Средства реализации}
+
+В качестве языка программирования для реализации данной лабораторной работы был выбран многопоточный язык GO \cite{golang}. Данный выбор обусловлен моим желанием расширить свои знания в области применения данного язкыа. Так же данный язык предоставляет средства тестирования разработанного ПО. Так же была использована библиотека {\ttfamily gofakeit} \cite{faker} для генерации случайных записей.
+
+\clearpage
+
+\section{Листинг кода}
+
+В листингах \ref{lst:brute} -- \ref{lst:combined} приведены реализации алгоритмов.
+
+\begin{lstinputlisting}[
+	caption={Алгоритм полного перебора},
+	label={lst:brute},
+	style={go},
+	linerange={81-90},
+	]{../src/dict/dict.go}
+\end{lstinputlisting}
+
+\begin{lstinputlisting}[
+	caption={Реализация частотного анализа},
+	label={lst:fa},
+	style={go},
+	linerange={109-146},
+	]{../src/dict/dict.go}
+\end{lstinputlisting}
+
+\begin{lstinputlisting}[
+	caption={Реализация алгоритма эффективного поиска},
+	label={lst:combined},
+	style={go},
+	linerange={149-159},
+	]{../src/dict/dict.go}
+\end{lstinputlisting}
+
+В таблице \ref{tabular:functional_test} приведены функциональные тесты программы.
+
+Используемый в тестах словарь:
+
+Dict = 
+\begin{tabular}{l l l}
+	[\{name : apple, & email : apple@apple.com, & city : coupertino \}\\
+	\{name : microsoft, & email : m@msn.com, & city : washington \}]
+\end{tabular}
+
+\renewcommand{\arraystretch}{2}
+\begin{table}[h]
+	\begin{center}
+		\caption{Функциональные тесты}
+		\label{tabular:functional_test}
+		\begin{tabular}{|*3{>{\renewcommand{\arraystretch}{1}}c|}}
+			\hline
+			\textbf{Описание теста} & \textbf{Входные данные} & \textbf{Ожидаемый результат}\\
+			\hline
+			\text{успешный поиск} & $\begin{array}{cc} Dict & apple\end{array}$ &
+			$\begin{array}{ccc} ``name`` &:& ``apple``\\ ``email`` & :& ``apple@apple.com`` \\ ``city``&:&``coupertino``\end{array}$\\
+			\hline
+			\text{неуспешный поиск} & $\begin{array}{cc} Dict & xiaomi\end{array}$ & \text{Not found}\\
+			\hline
+			
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\section*{Вывод}
+
+В данном разделе была рассмотрена структура ПО и листинги кода программы.

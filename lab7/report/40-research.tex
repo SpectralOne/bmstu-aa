@@ -1,0 +1,61 @@
+\chapter{Исследовательская часть}
+
+\section{Технические характеристики}
+
+Технические характеристики устройства, на котором выполнялось тестирование:
+
+\begin{itemize}
+	\item Операционная система: Kali \cite{kali} Linux \cite{linux} 5.9.0-kali2-amd64.
+	\item Память: 8 GB.
+	\item Процессор: Intel® Core™ i5-8250U \cite{intel} CPU @ 1.60GHz
+\end{itemize}
+
+Тестирование проводилось на ноутбуке при включённом режиме производительности. Во время тестирования ноутбук был нагружен только системными процессами.
+
+
+\section{Время выполнения алгоритмов}
+
+Алгоритмы тестировались при помощи написания <<бенчмарков>> \cite{gotest}, предоставляемых встроенными в Go средствами. Для такого рода тестирования не нужно самостоятельно указывать количество повторов. В библиотеке для тестирования существует константа $N$, которая динамически варьируется в зависимости от того, был ли получен стабильный результат или нет.
+
+В листинге \ref{lst:test} пример реализации бенчмарка.
+
+\begin{lstinputlisting}[
+	caption={Реализация бенчмарка},
+	label={lst:test},
+	style={go},
+	linerange={8-13},
+	]{../src/dict/dict_test.go}
+\end{lstinputlisting}
+
+На рисунках \ref{plt:time} приведён график сравнения производительности конвейеров.
+
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=left,
+			xlabel=Буквы,
+			ylabel={Время, нс},
+			symbolic x coords={A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z} ,
+			legend pos=south west,
+			ymajorgrids=true]
+			\addplot table[x=letter,y=Brute,col sep=comma] {inc/csv/brute.csv};
+			\addplot table[x=letter,y=Combined,col sep=comma] {inc/csv/combined.csv};
+			\legend{Brute, Combined}
+		\end{axis}
+	\end{tikzpicture}
+	\captionsetup{justification=centering}
+	\caption{Сравнение алгоритмов.}
+	\label{plt:time}
+\end{figure}
+
+\bigskip
+\section{Производительность алгоритмов}
+
+Производительность и объем выделенной памяти при работе алгоритмов указаны на рисунке \ref{img:mem}.
+
+\boximg{40mm}{mem}{Замеры производительности алгоритмов, выполненные при помощи команды \code{go test -bench . -benchmem}}
+
+\section*{Вывод}
+
+Экперимент показывает, что эффективность алгоритма полного перебора зависит от расположения искомого элемента.
