@@ -1,0 +1,74 @@
+\begin{thebibliography}{10}
+\def\selectlanguageifdefined#1{
+\expandafter\ifx\csname date#1\endcsname\relax
+\else\language\csname l@#1\endcsname\fi}
+\ifx\undefined\url\def\url#1{{\small #1}}\else\fi
+\ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
+\ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
+\ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
+
+\bibitem{diskr}
+\selectlanguageifdefined{russian}
+Белоусов~А.И.~Ткачев~С.Б. Дискретная
+  математика, 4-е издание.
+\newblock 2006.
+
+\bibitem{commi2}
+\selectlanguageifdefined{russian}
+Товстик~Т.М.~Жукова~Е.В. Алгоритм
+  приближенного решения задачи
+  коммивояжера.
+\newblock 1970.
+
+\bibitem{commi}
+\selectlanguageifdefined{russian}
+The Go Programming Language [Электронный ресурс].
+\newblock Режим доступа:
+  \url{http://mech.math.msu.su/~shvetz/54/inf/perl-problems/chCommisVoyageur.xhtml}
+  (дата обращения: 12.12.2020).
+
+\bibitem{ant1}
+\selectlanguageifdefined{russian}
+Муравьиные алгоритмы [Электронный ресурс].
+\newblock Режим доступа:
+  \url{http://www.machinelearning.ru/wiki/index.php?title=%D0%9C%D1%83%D1%80%D0%B0%D0%B2%D1%8C%D0%B8%D0%BD%D1%8B%D0%B5_%D0%B0%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B}
+  (дата обращения: 12.12.2020).
+
+\bibitem{shtovba}
+\selectlanguageifdefined{russian}
+С.Д.~Штовба. Муравьиные алгоритмы.
+\newblock 1970.
+
+\bibitem{golang}
+\selectlanguageifdefined{russian}
+The Go Programming Language [Электронный ресурс].
+\newblock Режим доступа: \url{https://golang.org/} (дата
+  обращения: 09.09.2020).
+
+\bibitem{lib:time}
+\selectlanguageifdefined{russian}
+testing -- Package time [Электронный ресурс].
+\newblock Режим доступа: \url{https://golang.org/pkg/time/}
+  (дата обращения: 18.11.2020).
+
+\bibitem{kali}
+\selectlanguageifdefined{russian}
+Our Most Advanced Penetration Testing Distribution, Ever.
+  [Электронный ресурс].
+\newblock Режим доступа: \url{https://kali.org/} (дата
+  обращения: 12.09.2020).
+
+\bibitem{linux}
+\selectlanguageifdefined{russian}
+Linux -- Википедия [Электронный ресурс].
+\newblock Режим доступа: \url{https://ru.wikipedia.org/wiki/Linux}
+  (дата обращения: 12.09.2020).
+
+\bibitem{intel}
+\selectlanguageifdefined{russian}
+Intel Processors [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://www.intel.com/content/www/us/en/products/processors/core/i5-processors.html}
+  (дата обращения: 12.09.2020).
+
+\end{thebibliography}

@@ -1,0 +1,60 @@
+\chapter{Исследовательская часть}
+
+\section{Пример работы}
+
+Пример работы программы представлен на рисунке \ref{img:demo}.
+
+\boximg{100mm}{demo}{Демонстрация работы алгоритмов}
+
+\section{Технические характеристики}
+
+Технические характеристики устройства, на котором выполнялось тестирование:
+
+\begin{itemize}
+	\item Операционная система: Kali \cite{kali} Linux \cite{linux} 5.9.0-kali1-amd64.
+	\item Память: 8 GB.
+	\item Процессор: Intel® Core™ i5-8250U \cite{intel} CPU @ 1.60GHz
+	\item Количество логических потоков: 8
+\end{itemize}
+
+Тестирование проводилось на ноутбуке при включённом режиме производительности. Во время тестирования ноутбук был нагружен только системными процессами.
+
+
+\section{Время выполнения алгоритмов}
+
+В листинге \ref{lst:test} пример реализации функции тестирования.
+
+\begin{lstinputlisting}[
+	caption={Функция тестирования},
+	label={lst:test},
+	style={go},
+	linerange={31-59},
+	]{../src/ant/benchmarks.go}
+\end{lstinputlisting}
+
+На рисунках \ref{plt:time} приведён график сравнения производительности конвейеров.
+
+\begin{figure}[!h]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			axis lines=left,
+			xlabel=Количество вершин,
+			ylabel={Время, мс},
+			legend pos=north west,
+			ymajorgrids=true]
+			\addplot table[x=count,y=Brute,col sep=comma] {inc/csv/brute.csv};
+			\addplot table[x=count,y=Ant,col sep=comma] {inc/csv/ant.csv};
+			\legend{Brute, Ant}
+		\end{axis}
+	\end{tikzpicture}
+	\captionsetup{justification=centering}
+	\caption{Сравнение алгоритмов.}
+	\label{plt:time}
+\end{figure}
+
+ 
+\section*{Вывод}
+
+Была исследована зависимость времени работы реализованных алгоритмов от размера матрицы смежности графа. По результатам эксперимента на малых размерах графа полный перебор значительно выигрывает муравьиных алгоритм в скорости, однако на размера графа больше 8 сложность полного перебора растет очень быстро, а так как муравьиный алгоритм обладает полиноминальной сложностью, он работает быстрее перебора.
+
