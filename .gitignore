@@ -4,4 +4,7 @@
 *.blg
 *.out
 *.toc
+*.txt
 main
+*.fdb*
+*.fls
