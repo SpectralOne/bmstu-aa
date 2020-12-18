@@ -95,6 +95,7 @@ func CreateRandom(size int) (a []int) {
 func CreateSorted(size int, reverse bool) (a []int) {
 	a = make([]int, size)
 
+	_ = a[size - 1] // omit boundary check
 	for i := range a {
 		if reverse {
 			a[i] = size - i
