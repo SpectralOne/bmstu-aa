@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \def\selectlanguageifdefined#1{
 \expandafter\ifx\csname date#1\endcsname\relax
 \else\language\csname l@#1\endcsname\fi}
@@ -13,15 +13,73 @@
   распределительные и рабочие конвейеры.
 \newblock -- М, 1970.
 
+\bibitem{smpbase}
+\selectlanguageifdefined{russian}
+Гергель~В.П.~Стронгин~Р.Г. Основы
+  параллельных вычислений для
+  многопроцессорных вычислительных систем.
+\newblock -- Н.Новгород, ННГУ, 2003.
+
+\bibitem{smp}
+\selectlanguageifdefined{russian}
+SMP Sarah L. Harris, David Money Harris, in Digital Design and Computer
+  Architecture, 2016 [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://www.sciencedirect.com/topics/computer-science/symmetric-multi-processor}
+  (дата обращения: 18.12.2020).
+
+\bibitem{vliw}
+\selectlanguageifdefined{russian}
+Центральный процессор «Эльбрус-4С»
+  [Электронный ресурс].
+\newblock Режим доступа:
+  \url{http://www.mcst.ru/mikroprocessor-elbrus4s} (дата
+  обращения: 18.12.2020).
+
+\bibitem{anallimits}
+\selectlanguageifdefined{russian}
+Padua~David. Parallelization, Automatic~// Encyclopedia of Parallel Computing.
+\newblock Springer US, 2011.
+\newblock {С.}~1442--1450.
+
+\bibitem{f}
+\selectlanguageifdefined{russian}
+Асинхронное программирование в F$\sharp$
+  [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://docs.microsoft.com/ru-ru/dotnet/fsharp/tutorials/asynchronous-and-concurrent-programming/async}
+  (дата обращения: 18.12.2020).
+
 \bibitem{golang}
 \selectlanguageifdefined{russian}
 The Go Programming Language [Электронный ресурс].
 \newblock Режим доступа: \url{https://golang.org/} (дата
   обращения: 09.09.2020).
 
+\bibitem{intelXE}
+\selectlanguageifdefined{russian}
+Intel Parallel Studio XE [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://software.intel.com/content/www/us/en/develop/tools/oneapi/commercial-base-hpc.html}
+  (дата обращения: 18.12.2020).
+
+\bibitem{lib:cxxthread}
+\selectlanguageifdefined{russian}
+Thread library [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://en.cppreference.com/w/cpp/thread} (дата обращения:
+  18.12.2020).
+
+\bibitem{concurrencygo}
+\selectlanguageifdefined{russian}
+testing -- GO channels <- concurrency <- [Электронный ресурс].
+\newblock Режим доступа:
+  \url{https://tour.golang.org/concurrency/2} (дата обращения:
+  18.12.2020).
+
 \bibitem{lib:time}
 \selectlanguageifdefined{russian}
-testing -- Package time [Электронный ресурс].
+Package time [Электронный ресурс].
 \newblock Режим доступа: \url{https://golang.org/pkg/time/}
   (дата обращения: 18.11.2020).
 
@@ -47,7 +105,7 @@ Intel Processors [Электронный ресурс].
 
 \bibitem{gotest}
 \selectlanguageifdefined{russian}
-testing -- The Go Programming Language [Электронный ресурс].
+Testing -- The Go Programming Language [Электронный ресурс].
 \newblock Режим доступа: \url{https://golang.org/pkg/testing/}
   (дата обращения: 12.09.2020).
 

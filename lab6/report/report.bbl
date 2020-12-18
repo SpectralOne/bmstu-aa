@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 \def\selectlanguageifdefined#1{
 \expandafter\ifx\csname date#1\endcsname\relax
 \else\language\csname l@#1\endcsname\fi}
@@ -6,12 +6,6 @@
 \ifx\undefined\BibUrl\def\BibUrl#1{\url{#1}}\else\fi
 \ifx\undefined\BibAnnote\long\def\BibAnnote#1{(#1)}\else\fi
 \ifx\undefined\BibEmph\def\BibEmph#1{\emph{#1}}\else\fi
-
-\bibitem{diskr}
-\selectlanguageifdefined{russian}
-Белоусов~А.И.~Ткачев~С.Б. Дискретная
-  математика, 4-е издание.
-\newblock 2006.
 
 \bibitem{commi2}
 \selectlanguageifdefined{russian}
@@ -22,7 +16,7 @@
 
 \bibitem{commi}
 \selectlanguageifdefined{russian}
-The Go Programming Language [Электронный ресурс].
+Perl problems - Commis Voyageur [Электронный ресурс].
 \newblock Режим доступа:
   \url{http://mech.math.msu.su/~shvetz/54/inf/perl-problems/chCommisVoyageur.xhtml}
   (дата обращения: 12.12.2020).

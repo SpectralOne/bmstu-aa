@@ -9,22 +9,22 @@ import (
 
 func main() {
 	amount := 20
+	wait := make(chan int)
 
 	start := time.Now()
-	wait := make(chan int)
 	lineP := conv.Parallel(amount, wait)
 	<-wait
 	// FIXME: uncomment log
-	// conv.Log(lineP)
+	conv.Log(lineP, false)
 	_ = lineP
 	end := time.Now()
-	fmt.Printf("%d тортов на параллельном ковейере: %v\n", amount, end.Sub(start))
+	fmt.Printf("%d персональных карточек на пареллельном конвейере: %v\n", amount, end.Sub(start))
 
 	start = time.Now()
 	lineL := conv.Linear(amount)
 	end = time.Now()
 	_ = lineL
 	// FIXME: uncomment log
-	// conv.Log(lineL)
-	fmt.Printf("%d тортов на линейном конвейере: %v\n", amount, end.Sub(start))
+	conv.Log(lineL, false)
+	fmt.Printf("%d персональных карточек на линейном конвейере: %v\n", amount, end.Sub(start))
 }

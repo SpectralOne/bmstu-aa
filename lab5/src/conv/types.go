@@ -2,20 +2,24 @@ package conv
 
 import "time"
 
-type Cake struct {
-	num       int
-	prepare   bool
-	bake      bool
-	finalize  bool
-	sPrepare  time.Time
-	fPrepare  time.Time
-	sBake     time.Time
-	fBake     time.Time
-	sFinalize time.Time
-	fFinalize time.Time
+type Person struct {
+	num        int
+	haveName   bool
+	haveEmail  bool
+	haveBeer   bool
+	startName  time.Time
+	doneName   time.Time
+	startEmail time.Time
+	doneEmail  time.Time
+	startBeer  time.Time
+	doneBeer   time.Time
+
+	name  string
+	email string
+	beer  string
 }
 
 type Queue struct {
-	q [](*Cake)
+	q [](*Person)
 	l int
 }
