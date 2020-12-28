@@ -4,43 +4,38 @@ import (
 	"fmt"
 )
 
-func out(arr [6]int) {
+func out(arr [4]int) {
 	for i := range arr {
 		fmt.Printf("%d ", arr[i])
 	}
 }
 
 func main() {
-	var size = 6                                  // 1
-	var arr = [...]int{0, 100, -100, 50, -50, 12} // 2
-
-	for left, right := 0, size-1; left < right; { // 3
-		for i := left; i < right; i++ { // 4
-			if arr[i+1] < arr[i] { // 5
-				temp := arr[i]    // 6
-				arr[i] = arr[i+1] // 7
-				arr[i+1] = temp   // 8
+	var size = 4         // 1
+	var arr [4]int       // 2
+	left := 0            // 3
+	right := size - 1    // 4
+	for i := range arr { // 5
+		arr[i] = size - i // 6
+	}
+	for left < right { // 7
+		for i := left; i < right; i++ { // 8
+			if arr[i+1] < arr[i] { // 9
+				temp := arr[i]    // 10
+				arr[i] = arr[i+1] // 11
+				arr[i+1] = temp   // 12
 			}
 		}
-		right--                         // 9
-		for i := right; i > left; i-- { // 10
-			if arr[i-1] > arr[i] { // 11
-				temp := arr[i]    // 12
-				arr[i] = arr[i-1] // 13
-				arr[i-1] = temp   // 14
+		right--                         // 13
+		for i := right; i > left; i-- { // 14
+			if arr[i-1] > arr[i] { // 15
+				temp := arr[i]    // 16
+				arr[i] = arr[i-1] // 17
+				arr[i-1] = temp   // 18
 			}
 		}
-		left++ // 15
+		left++ // 19
 	}
 	fmt.Printf("Исходный массив: ")
 	out(arr)
 }
-
-/* 
---- ГУ (CG) ---
-1) стрелка 4 -> 3 лишняя (случайно ткнул)
-2) из 11 -> 10 не хватает
-
---- ИГ (IG) ---
-
-*/
