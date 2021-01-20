@@ -1,6 +1,14 @@
+# vscode
 .vscode/
+
+# lisp
 .lsp/
+
+# secret project
 .clj-kondo/
+dict/
+
+# docs stuff
 *.aux
 *.log
 *.gz
@@ -8,6 +16,8 @@
 *.out
 *.toc
 *.txt
-main
 *.fdb*
 *.fls
+
+# go executable
+main
